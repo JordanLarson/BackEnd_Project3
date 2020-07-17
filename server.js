@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const logger = require("morgan");
-const userController = require("./controllers/usersController");
+const usersController = require("./controllers/users");
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
@@ -10,6 +10,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(logger("dev"));
 
-app.use("/api", userController);
+app.use("/api", usersController);
 
-app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+app.set("port", process.env.PORT || 3000);
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
+});
