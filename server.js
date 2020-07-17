@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const logger = require("morgan");
-const usersController = require("./controllers/users");
+const usersController = require("./controllers/usersController");
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
