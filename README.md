@@ -17,6 +17,13 @@ may have antibodies, or the opposite.
 
 ## WireFrames
 
+mobile-design:
+https://www.figma.com/file/bCfIhoNl6QbITubYPlMMmz/Dating-App?node-id=0%3A1
+
+desktop-design:
+https://www.figma.com/file/79i6b3P296mLVXuDHc2XW7/Desktop-Wireframes?node-id=0%3A1
+
+
 
 # USER STORIES
 User can see users from our dating database
