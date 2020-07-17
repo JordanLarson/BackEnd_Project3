@@ -2,7 +2,7 @@ const mongoose = require("../db/connection");
 
 const userSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
-  image: { type: File, required: true },
+  image: { data: Buffer, contentType: String },
   location: { type: String, required: true },
   age: { type: Number, required: true },
   gender: { type: String, required: true },
