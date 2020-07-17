@@ -197,6 +197,19 @@ const main = async () => {
       location: "Denver, CO",
       age: 31,
       gender: "Male",
+      antibodies: true,
+      likesYou: true,
+      isFavorite: false,
+      hobbiesBefore: "recharging my crystals, ice-skating, craft beer",
+      hobbiesAfter: "eating pizza rolls, snacking on cheetohs, binge-watching Gilmore Girls"
+    },
+    {
+      firstName: "Chad",
+      image:
+        "https://pbs.twimg.com/profile_images/1226721327064735749/sAIKusXK_400x400.jpg",
+      location: "Louisville, Kentucky",
+      age: 28,
+      gender: "Male",
       antibodies: false,
       likesYou: true,
       isFavorite: false,
@@ -210,6 +223,20 @@ const main = async () => {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRU4MJx_Ixr0sOICLjPJmdF4GdWHUAWbS28JQ&usqp=CAU",
       location: "Tampa, FL",
       age: 37,
+      gender: "Male",
+      antibodies: false,
+      likesYou: true,
+      isFavorite: false,
+      hobbiesBefore:
+        "eating oreos, being an all-around bad person, bothering women",
+      hobbiesAfter: "eating tons of oreos, frisbee, waxing my eyebrows",
+    },
+    {
+      firstName: "B-ryan",
+      image:
+        "https://i.pinimg.com/originals/7b/6d/12/7b6d129552dbe4f1f209eded66daa841.jpg",
+      location: "Miami, Florida",
+      age: 28,
       gender: "Male",
       antibodies: true,
       likesYou: true,
@@ -252,13 +279,27 @@ const main = async () => {
         "https://specials-images.forbesimg.com/imageserve/5e50238b765d4500072ce14c/960x0.jpg?cropX1=0&cropX2=3000&cropY1=224&cropY2=1911",
       location: "Los Angeles, CA",
       age: 49,
-      gender: "Male",
       antibodies: true,
       likesYou: true,
       isFavorite: false,
       hobbiesBefore: "Thinking, building rockets, renewable energy",
       hobbiesAfter:
         "Terraforming, Grimes",
+    },
+    {
+      firstName: "Davey",
+      image:
+        "https://memestatic1.fjcdn.com/comments/Quotthis+onequot+_fc577b07dfa5dc1b3c30180efa4059a2.jpg",
+      location: "Minneapolis, MN",
+      age: 28,
+      gender: "Male",
+      antibodies: true,
+      likesYou: true,
+      isFavorite: false,
+       hobbiesBefore:
+        "syling my hair, drinking white-claws, playing the ukelele in public places",
+      hobbiesAfter: "mukbang, playing pokemon-go in my house, being a jerk",
+      
     },
     {
       firstName: "Julie",
@@ -357,7 +398,7 @@ const main = async () => {
       hobbiesBefore: "Punk shows, watching the Bachelor with my roommate",
       hobbiesAfter:
         "Graphic design and hot cheetos. :)",
-    }
+    },
   ];
 
   await User.insertMany(users);
