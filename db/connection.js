@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-// let MONGODB_URI = 'mongodb://127.0.0.1:27017/itemsDatabase'
 let MONGODB_URI = "";
 
 if (process.env.NODE_ENV === "production") {
