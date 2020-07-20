@@ -29,16 +29,23 @@ router.delete('/users/:id', async (req, res) => {
 })
 
 router.post("/users", (req, res) => {
-  User.create(req.body, (error, newUser) => {
-    if (error) console.log(error);
-    else res.send(newUser);
-  });
   const newUser = req.body;
     User.push(newUser);
     res.send(newUser);
 });
+  User.create(req.body, (error, newUser) => {
+    if (error) console.log(error);
+    else res.send(newUser);
+  });
 
 
+router.put('/:id', (req,res) =>{
+  User.findByIdAndUpdate(req.params.id, req.body, {new:true},
+    (error, updated) => {
+      if (error) console.log(error)
+      else res.send(updated)
+    });
+});
 
 
 router.get("/users/:id", async (req, res) => {
