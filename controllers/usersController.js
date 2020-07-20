@@ -14,39 +14,44 @@ router.get("/users", async (req, res) => {
   }
 });
 
-
-router.delete('/users/:id', async (req, res) => {
+router.delete("/users/:id", async (req, res) => {
   try {
-      const { id } = req.params;
-      const deleted = await User.findByIdAndDelete(id)
-      if (deleted) {
-          return res.status(200).send("User deleted");
-      }
-      throw new Error("Item not found");
+    const { id } = req.params;
+    const deleted = await User.findByIdAndDelete(id);
+    if (deleted) {
+      return res.status(200).send("User deleted");
+    }
+    throw new Error("Item not found");
   } catch (error) {
-      return res.status(500).send(error.message);
+    return res.status(500).send(error.message);
   }
-})
-
-router.post("/users", (req, res) => {
-  const newUser = req.body;
-    User.push(newUser);
-    res.send(newUser);
-   User.create(req.body, (error, newUser) => {
-    if (error) console.log(error);
-    else res.send(newUser);
-    });
-  });
-
-
-router.put('/:id', (req,res) =>{
-  User.findByIdAndUpdate(req.params.id, req.body, {new:true},
-    (error, updated) => {
-      if (error) console.log(error)
-      else res.send(updated)
-    });
 });
 
+router.post("/users", async (req, res) => {
+  try {
+    console.log(req.body);
+    const newUser = await new User(req.body);
+    await newUser.save();
+    console.log(newUser);
+    return res.status(201).json({
+      user,
+    });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+});
+
+router.put("/users/:id", (req, res) => {
+  User.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (error, updated) => {
+      if (error) console.log(error);
+      else res.send(updated);
+    }
+  );
+});
 
 router.get("/users/:id", async (req, res) => {
   try {
