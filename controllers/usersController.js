@@ -32,10 +32,10 @@ router.post("/users", (req, res) => {
   const newUser = req.body;
     User.push(newUser);
     res.send(newUser);
-});
-  User.create(req.body, (error, newUser) => {
+   User.create(req.body, (error, newUser) => {
     if (error) console.log(error);
     else res.send(newUser);
+    });
   });
 
 
