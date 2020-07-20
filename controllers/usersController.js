@@ -38,7 +38,13 @@ router.post("/users", (req, res) => {
     res.send(newUser);
 });
 
-
+router.put('/:id', (req,res) =>{
+  User.findByIdAndUpdate(req.params.id, req.body, {new:true},
+    (error, updated) => {
+      if (error) console.log(error)
+      else res.send(updated)
+    });
+});
 
 
 router.get("/users/:id", async (req, res) => {
