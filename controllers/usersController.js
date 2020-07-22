@@ -12,6 +12,16 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/favorites", async (req, res) => {
+  try {
+    const favoritedUsers = await User.find({ isFavorite: true });
+    return res.json({ favoritedUsers });
+  } catch (error) {
+    console.log("error");
+    return res.status(500).send(error.message);
+  }
+});
+
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
