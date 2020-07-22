@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/users");
+const Message = require("../models/messages");
 
 router.get("/", async (req, res) => {
   try {
-    const users = await User.find();
-    return res.json({ users });
+    groupIdArray = [req.query.sender, req.query.recipient];
+    groupId = groupIdArray.sort().join("_");
+    console.log("groupId: " + groupId);
+
+    const messages = await Message.find({ groupId: groupId });
+    return res.json({ messages });
   } catch (error) {
     console.log("error");
     return res.status(500).send(error.message);
@@ -15,9 +19,9 @@ router.get("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const deleted = await User.findByIdAndDelete(id);
+    const deleted = await Message.findByIdAndDelete(id);
     if (deleted) {
-      return res.status(200).send("User deleted");
+      return res.status(200).send("Message deleted");
     }
     throw new Error("Item not found");
   } catch (error) {
@@ -27,20 +31,22 @@ router.delete("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
+    groupIdArray = [req.body.sender, req.body.recipient];
+    groupId = groupIdArray.sort().join("_");
+    req.body.groupId = groupId;
+
     console.log(req.body);
-    const newUser = await new User(req.body);
-    await newUser.save();
-    console.log(newUser);
-    return res.status(201).json({
-      user,
-    });
+    const newMessage = await new Message(req.body);
+    await newMessage.save();
+    console.log(newMessage);
+    return res.status(201).json(newMessage);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
 });
 
 router.put("/:id", (req, res) => {
-  User.findByIdAndUpdate(
+  Message.findByIdAndUpdate(
     req.params.id,
     req.body,
     { new: true },
@@ -54,11 +60,11 @@ router.put("/:id", (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id);
-    if (user) {
-      return res.status(200).json({ user });
+    const message = await Message.findById(id);
+    if (message) {
+      return res.status(200).json({ message });
     }
-    return res.status(404).send("User with the specified ID does not exist");
+    return res.status(404).send("Message with the specified ID does not exist");
   } catch (error) {
     return res.status(500).send(error.message);
   }
