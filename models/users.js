@@ -11,6 +11,8 @@ const userSchema = new mongoose.Schema({
   isFavorite: { type: Boolean, default: false },
   hobbiesBefore: { type: String, required: true },
   hobbiesAfter: { type: String, required: true },
+  username: { type: String, required: false },
+  password: { type: String, required: false },
 });
 
 const User = mongoose.model("User", userSchema);

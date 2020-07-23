@@ -41,9 +41,7 @@ router.post("/", async (req, res) => {
     const newUser = await new User(req.body);
     await newUser.save();
     console.log(newUser);
-    return res.status(201).json({
-      user,
-    });
+    return res.status(201).json(newUser);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
@@ -59,6 +57,25 @@ router.put("/:id", (req, res) => {
       else res.send(updated);
     }
   );
+});
+
+router.get("/login", async (req, res) => {
+  try {
+    const username = req.query.username;
+    const password = req.query.password;
+
+    const logged_in_user = await User.find({
+      username: username,
+      password: password,
+    });
+    console.log("logged_in_user: " + logged_in_user);
+    if (logged_in_user) {
+      return res.status(200).json(logged_in_user[0]);
+    }
+    return res.status(404).send("User with the specified ID does not exist");
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
 });
 
 router.get("/:id", async (req, res) => {
