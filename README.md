@@ -32,8 +32,8 @@ User can sign for a profile & edit their own profile
 
 | BackEnd                            | Priority | Estimated Time | Time Invetsted | Actual Time |
 | ---------------------------------- | :------: | :------------: | :------------: | :---------: |
-| User Schema                        |    H     |       1        |                |             |
-| Create dummy accounts              |    H     |       4        |                |             |
+| User Schema                        |    H     |       1        |        1        |             |
+| Create dummy accounts              |    H     |       4        |       5         |             |
 | Dummy account Seed Data            |    H     |       2        |                |             |
 | Dummy account Routes/Controllers   |    H     |       5        |                |             |
 | User/Dummy Server set up           |    H     |       1        |                |             |
@@ -49,14 +49,14 @@ User can sign for a profile & edit their own profile
 | Navbar & Footer                               |    H     |       2        |                |             |
 | React Router                                  |    H     |       4        |                |             |
 | Home Page                                     |    H     |       1        |                |             |
-| Registration Page                             |    H     |       4        |                |             |
-| Favorites/Liked Page with list of users liked |    H     |       5        |                |             |
-| Preferences Page                              |    H     |       5        |                |             |
+| Registration Page                             |    H     |       4        |        5        |             |
+| Favorites/Liked Page with list of users liked |    H     |       5        |       3         |             |
+| Preferences Page                              |    H     |       5        |       5         |             |
 | Dashboard with like/dislike buttons           |    H     |       5        |                |             |
 | Liked User Info Page                          |    M     |       4        |                |             |
 | Your Profile Page -Edit info form             |    H     |       2        |                |             |
 | Current Conversations Page                    |    M     |       6        |                |             |
-| Team/Website About Page                       |    H     |       2        |                |             |
+| Team/Website About Page                       |    H     |       2        |       4         |             |
 | Responsive Design                             |    H     |       6        |                |             |
 | CSS/ Styling                                  |    H     |       8        |                |             |
 | Total                                         |    H     |       54       |                |             |
@@ -99,7 +99,7 @@ Axios
 Back End:
 Cors
 Morgan
-
+React media
 # Code Snippet
 
 # Bugs & Fixes:
