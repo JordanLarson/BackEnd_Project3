@@ -345,7 +345,7 @@ const main = async () => {
       gender: "male",
       antibodies: true,
       likesYou: true,
-      isFavorite: true,
+      isFavorite: false,
       hobbiesBefore: "concerts, having drinks with my bros, frat parties ",
       hobbiesAfter: "fortnite, walkin my dog gizmo",
     },
