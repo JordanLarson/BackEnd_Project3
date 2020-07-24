@@ -413,21 +413,6 @@ const main = async () => {
       hobbiesAfter: "spending time with my son, yoga",
     },
     {
-      firstName: "Frank",
-      username: "user27",
-      password: "password",
-      image:
-        "https://res.cloudinary.com/dz449ufvx/image/upload/v1595027743/Profile%20images/s-l300_qwv8bq.jpg",
-      location: "Birmingham,Al",
-      age: 26,
-      gender: "male",
-      antibodies: true,
-      likesYou: true,
-      isFavorite: true,
-      hobbiesBefore: "working",
-      hobbiesAfter: "learning masonary",
-    },
-    {
       firstName: "Stephanie",
       username: "user28",
       password: "password",
@@ -756,21 +741,6 @@ const main = async () => {
         "taking long walks on the beach, running an internet business, secretly loving kittens",
     },
     {
-      firstName: "Jasper",
-      username: "user49",
-      password: "password",
-      image:
-        "https://res.cloudinary.com/dz449ufvx/image/upload/v1595028326/Profile%20images/e5b80691-4292-4e3b-8e1e-7c5094bc3793_spr5y7.jpg",
-      location: "Miami,Fl",
-      age: 25,
-      gender: "Male",
-      antibodies: true,
-      likesYou: true,
-      isFavorite: true,
-      hobbiesBefore: "concerts, having drinks with my bros, frat parties ",
-      hobbiesAfter: "fortnite, walkin my dog gizmo",
-    },
-    {
       firstName: "Destiny",
       username: "user50",
       password: "password",
@@ -844,7 +814,7 @@ const main = async () => {
       gender: "male",
       antibodies: true,
       likesYou: true,
-      isFavorite: true,
+      isFavorite: false,
       hobbiesBefore: "working",
       hobbiesAfter: "learning masonary",
     },
@@ -1609,7 +1579,7 @@ const main = async () => {
       hobbiesAfter: "having Brown eyes, thrift shopping, photography",
     },
     {
-      firstName: "Jenny",
+      firstName: "Jennie",
       username: "user104",
       password: "password",
       image:
